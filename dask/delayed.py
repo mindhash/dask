@@ -569,6 +569,8 @@ class Delayed(DaskMethodsMixin, OperatorMethodMixin):
     _get_unary_operator = _get_binary_operator
 
     def visualise(self, *args, **kwargs):
+        # added to warn users incase of spelling error 
+        # for more details: https://github.com/dask/dask/issues/5721
         raise AttributeError("Attribute visualise not found. Perhaps you meant visualize?")
 
 def call_function(func, func_token, args, kwargs, pure=None, nout=None):
